@@ -1,3 +1,5 @@
+//const SimpleSchema = require("simpl-schema");
+//Stocks = new Mongo.Collection('stocks');
 Stocks = new Meteor.Collection('stocks');
 
 StockSchema = new SimpleSchema({
