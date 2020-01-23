@@ -1,6 +1,7 @@
-//const SimpleSchema = require("simpl-schema");
-//Stocks = new Mongo.Collection('stocks');
-Stocks = new Meteor.Collection('stocks');
+const SimpleSchema = require("simpl-schema");
+Stocks = new Mongo.Collection('stocks');
+
+SimpleSchema.extendOptions(['autoform']);
 
 StockSchema = new SimpleSchema({
     name: {
