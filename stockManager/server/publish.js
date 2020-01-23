@@ -1,3 +1,3 @@
 Meteor.publish('stocks', function () {
-    return Stocks.find({creator: this.userId})
+    return Stocks.find({owner: this.userId})
 });

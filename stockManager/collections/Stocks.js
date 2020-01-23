@@ -3,6 +3,12 @@ Stocks = new Mongo.Collection('stocks');
 
 SimpleSchema.extendOptions(['autoform']);
 
+Stocks.allow({
+    insert: function (userId) {
+        return !!userId;
+    }
+});
+
 StockSchema = new SimpleSchema({
     name: {
         type: String,
@@ -12,9 +18,9 @@ StockSchema = new SimpleSchema({
         type: String,
         label: "Description"
     },
-    creator: {
+    owner: {
         type: String,
-        label: "Creator",
+        label: "Owner",
         autoValue: function () {
             return this.userId
         },
