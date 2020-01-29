@@ -1,5 +1,16 @@
-import '../../collections/Stocks';
+import { Stocks } from  '../../collections/Stocks';
+//import { Meteor } from "meteor/meteor";
+import { Template} from "meteor/templating";
 
-Meteor.subscribe('stocks');
+Template.NewStock.onCreated(function()  {
+    this.subscribe('stocks');
+
+});
 
 console.log(Stocks.find().fetch());
+
+Template.NewStock.helpers({
+    testStock(){
+        return Stocks
+    }
+});

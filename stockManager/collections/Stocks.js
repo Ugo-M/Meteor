@@ -1,5 +1,5 @@
 const SimpleSchema = require("simpl-schema");
-Stocks = new Mongo.Collection('stocks');
+export const Stocks = new Mongo.Collection('stocks');
 
 SimpleSchema.extendOptions(['autoform']);
 
@@ -15,7 +15,7 @@ Stocks.allow({
     }*/
 });
 
-Ressource = new SimpleSchema({
+const Ressource = new SimpleSchema({
     name: {
         type: String
     },
@@ -25,7 +25,7 @@ Ressource = new SimpleSchema({
 });
 
 
-StockSchema = new SimpleSchema({
+const StockSchema = new SimpleSchema({
     name: {
         type: String,
         label: "Name"
