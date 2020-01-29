@@ -8,6 +8,8 @@ FlowRouter.route('/', {
 FlowRouter.route('/stock', {
     name: 'stock',
     action() {
-        BlazeLayout.render('MainLayout', {main: 'Stocks'})
+        BlazeLayout.render('MainLayout', {
+            main: 'Stocks'
+        })
     }
 });

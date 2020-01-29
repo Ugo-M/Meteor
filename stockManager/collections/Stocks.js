@@ -6,8 +6,24 @@ SimpleSchema.extendOptions(['autoform']);
 Stocks.allow({
     insert: function (userId) {
         return !!userId;
-    }
+    }/*,
+    update: function (userId) {
+        return !!userId;
+    },
+    delete: function (userId) {
+        return !!userId;
+    }*/
 });
+
+Ressource = new SimpleSchema({
+    name: {
+        type: String
+    },
+    amount: {
+        type: String
+    },
+});
+
 
 StockSchema = new SimpleSchema({
     name: {
@@ -17,6 +33,12 @@ StockSchema = new SimpleSchema({
     desc: {
         type: String,
         label: "Description"
+    },
+    ressources: {
+        type: Array
+    },
+    'ressources.$': {
+        type: Ressource
     },
     owner: {
         type: String,
