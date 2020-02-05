@@ -1,0 +1,9 @@
+site_name: Meteor Stock Manager
+
+theme: mkdocs
+
+repo_url: https://github.com/Ugo-M//
+edit_uri: ''
+
+nav:
+  - Home: index.md

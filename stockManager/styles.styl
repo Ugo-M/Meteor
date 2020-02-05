@@ -38,12 +38,14 @@ dark-red = #990000
 teal = #82D8D8
 dark-teal = #66A6A6
 green = #CBE56C
-blue = #16528E
-bright-blue = #0082C8
+blue = #5581CC
+dark-blue = #203863
 maroon = #6A2140
 light-red = #CA5765
 pink = #CF256D
 orange = #E8846B
+brown = #634b20
+beige = #d0c9bc
 
 z = {
     neg: -7,
@@ -170,6 +172,14 @@ p
     &:hover
       background @background - 40
       border-color @background
+  &.btn-secondary
+    color darkslateblue
+    background transparent
+    border solid 1px @background
+    shadow-level(0)
+    &:hover
+      border-color darkslateblue
+      shadow-level(1)
   &.btn-deny
     background red
     border solid 3px @background
@@ -326,12 +336,14 @@ input, select, textarea
       display none
     .remove-from-menu
       display block
-  h3
+  h4
     font-size: 3em;
     opacity: 0.3;
     border-bottom: rgba(0,0,0, 0.3) solid 3px
     margin-top 0
     margin-bottom 10px
+  h3
+    visibility hidden
   button
     margin-top 20px
   .fa-trash, .fa-pencil
@@ -352,12 +364,10 @@ input, select, textarea
     right 40px
     &:hover
       color teal
-  .stock-item
+  .item
     display inline-block
     margin-right 10px
     font-size 1.2em
-    h3
-      visibility hidden
   &:hover
     shadow-level(3)
 // animation card 0.6s ease 1 forwards

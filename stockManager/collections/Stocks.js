@@ -4,10 +4,10 @@ export const Stocks = new Mongo.Collection('stocks');
 SimpleSchema.extendOptions(['autoform']);
 
 Stocks.allow({
-    insert: function (userId, doc) {
+    insert: function (userId) {
         return !!userId;
     },
-    update: function (userId, doc) {
+    update: function (userId) {
         return !!userId;
     },
     remove: function (userId) {
@@ -15,7 +15,7 @@ Stocks.allow({
     }
 });
 
-const stockItem = new SimpleSchema({
+const Item = new SimpleSchema({
     name: {
         type: String
     },
@@ -34,11 +34,11 @@ const StockSchema = new SimpleSchema({
         type: String,
         label: "Description"
     },
-    stockItem: {
+    Item: {
         type: Array
     },
-    'stockItem.$': {
-        type: stockItem
+    'Item.$': {
+        type: Item
     },
     owner: {
         type: String,
