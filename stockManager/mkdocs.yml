@@ -8,6 +8,6 @@ edit_uri: ''
 nav:
   - Home: index.md
   - Client: client.md
-  - Collecions: collections.md
+  - Collections: collections.md
   - Routes: routes.md
   - Server: server.md
