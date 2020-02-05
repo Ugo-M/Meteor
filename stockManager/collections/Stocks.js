@@ -4,18 +4,18 @@ export const Stocks = new Mongo.Collection('stocks');
 SimpleSchema.extendOptions(['autoform']);
 
 Stocks.allow({
-    insert: function (userId) {
+    insert: function (userId, doc) {
         return !!userId;
     },
-    update: function (userId) {
+    update: function (userId, doc) {
         return !!userId;
-    }/*,
-    delete: function (userId) {
+    },
+    remove: function (userId) {
         return !!userId;
-    }*/
+    }
 });
 
-const Ressource = new SimpleSchema({
+const stockItem = new SimpleSchema({
     name: {
         type: String
     },
@@ -34,11 +34,11 @@ const StockSchema = new SimpleSchema({
         type: String,
         label: "Description"
     },
-    ressources: {
+    stockItem: {
         type: Array
     },
-    'ressources.$': {
-        type: Ressource
+    'stockItem.$': {
+        type: stockItem
     },
     owner: {
         type: String,
@@ -61,10 +61,14 @@ const StockSchema = new SimpleSchema({
         }
     }
 });
-/*
+
+
 Meteor.methods({
-    toggl
+    deleteStock: function (id) {
+        Stocks.remove(id);
+    }
 });
-*/
+
+
 Stocks.attachSchema( StockSchema );
 

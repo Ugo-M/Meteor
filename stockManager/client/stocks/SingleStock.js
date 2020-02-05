@@ -1,3 +1,5 @@
+import { Stocks } from  '../../collections/Stocks';
+
 Template.SingleStock.onCreated(function()  {
     var self = this;
     self.autorun(function(){
@@ -8,9 +10,6 @@ Template.SingleStock.onCreated(function()  {
 Template.SingleStock.helpers({
     stock(){
         return Stocks.findOne({_id: FlowRouter.getParam('id')})
-    },
-    updateStockId: function(){
-        return this._id;
     }
 });
 
