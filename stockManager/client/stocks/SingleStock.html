@@ -1,0 +1,14 @@
+<template name="SingleStock">
+    <article class="stock">
+        <h1>{{stock.name}}</h1>
+        <h1>{{name}}</h1>
+        <p>{{desc}}</p>
+        <p>
+            {{#each ressources}}
+                <span class="ressource">{{name}} - {{amount}}</span>
+            {{/each}}
+        </p>
+    </article>
+<!--    {{> quickForm collection="Stocks" id=updateStockId type="update" doc=this autosave=true}}-->
+
+</template>
