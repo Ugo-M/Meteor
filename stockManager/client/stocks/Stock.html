@@ -1,0 +1,12 @@
+<template name="Stock">
+    <article class="stock">
+        <h3>{{name}}</h3>
+        <p>{{desc}}</p>
+        <p>
+            {{#each ressources}}
+                <span class="ressource">{{name}} - {{amount}}</span>
+            {{/each}}
+        </p>
+        <a href="/stock/{{_id}}">View Details</a>
+    </article>
+</template>

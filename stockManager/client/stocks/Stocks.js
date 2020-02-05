@@ -3,14 +3,21 @@ import { Stocks } from  '../../collections/Stocks';
 import { Template} from "meteor/templating";
 
 Template.NewStock.onCreated(function()  {
-    this.subscribe('stocks');
-
+    var self = this;
+    self.autorun(function () {
+        self.subscribe('stocks')
+    });
+    //this.subscribe('stocks');
 });
 
-console.log(Stocks.find().fetch());
-
 Template.NewStock.helpers({
-    testStock(){
+    stock(){
         return Stocks
+    }
+});
+
+Template.Stocks.helpers({
+    stocks(){
+        return Stocks.find({})
     }
 });

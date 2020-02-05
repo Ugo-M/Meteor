@@ -6,10 +6,10 @@ SimpleSchema.extendOptions(['autoform']);
 Stocks.allow({
     insert: function (userId) {
         return !!userId;
-    }/*,
+    },
     update: function (userId) {
         return !!userId;
-    },
+    }/*,
     delete: function (userId) {
         return !!userId;
     }*/
@@ -61,6 +61,10 @@ const StockSchema = new SimpleSchema({
         }
     }
 });
-
+/*
+Meteor.methods({
+    toggl
+});
+*/
 Stocks.attachSchema( StockSchema );
 
