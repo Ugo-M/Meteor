@@ -1,13 +1,11 @@
 import { Stocks } from  '../../collections/Stocks';
-//import { Meteor } from "meteor/meteor";
 import { Template} from "meteor/templating";
 
 Template.NewStock.onCreated(function()  {
-    var self = this;
+    const self = this;
     self.autorun(function () {
         self.subscribe('stocks')
     });
-    //this.subscribe('stocks');
 });
 
 Template.NewStock.helpers({

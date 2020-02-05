@@ -9,6 +9,7 @@ Template.Stock.helpers({
     updateStockId(){
         return this._id;
     },
+    // Stocks collection
     stock(){
         return Stocks
     },
@@ -21,6 +22,7 @@ Template.Stock.events({
     'click .fa-trash' : function () {
         Meteor.call('deleteStock', this._id);
     },
+    // Enter / Exit edit mode
     'click .fa-pencil' : function (event, template) {
         template.editMode.set(!template.editMode.get());
     }

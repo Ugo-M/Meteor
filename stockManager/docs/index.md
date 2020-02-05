@@ -1,5 +1,7 @@
 # Welcome to the doc
 
+Stock Managing app made with Meteor using Blaze. 
+
 ## Install
 
 *  Install [Meteor](https://www.meteor.com/install)
