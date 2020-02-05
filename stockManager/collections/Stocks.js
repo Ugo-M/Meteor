@@ -9,13 +9,13 @@ Stocks.allow({
     },
     update: function (userId) {
         return !!userId;
-    }/*,
-    delete: function (userId) {
+    },
+    remove: function (userId) {
         return !!userId;
-    }*/
+    }
 });
 
-const Ressource = new SimpleSchema({
+const Item = new SimpleSchema({
     name: {
         type: String
     },
@@ -34,11 +34,11 @@ const StockSchema = new SimpleSchema({
         type: String,
         label: "Description"
     },
-    ressources: {
+    Item: {
         type: Array
     },
-    'ressources.$': {
-        type: Ressource
+    'Item.$': {
+        type: Item
     },
     owner: {
         type: String,
@@ -61,10 +61,14 @@ const StockSchema = new SimpleSchema({
         }
     }
 });
-/*
+
+
 Meteor.methods({
-    toggl
+    deleteStock: function (id) {
+        Stocks.remove(id);
+    }
 });
-*/
+
+
 Stocks.attachSchema( StockSchema );
 
