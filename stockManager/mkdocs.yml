@@ -2,8 +2,12 @@ site_name: Meteor Stock Manager
 
 theme: mkdocs
 
-repo_url: https://github.com/Ugo-M//
+repo_url: https://github.com/Ugo-M/Meteor/
 edit_uri: ''
 
 nav:
   - Home: index.md
+  - Client: client.md
+  - Collecions: collections.md
+  - Routes: routes.md
+  - Server: server.md

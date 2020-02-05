@@ -1,3 +1,4 @@
+// Redirections on log in and log out
 if (Meteor.isClient){
     Accounts.onLogin(function () {
         FlowRouter.go('stocks')
@@ -8,12 +9,15 @@ if (Meteor.isClient){
     });
 }
 
+
+// Automatically redirect a logged out user to the home page.
 FlowRouter.triggers.enter([function (context, redirect) {
     if(!Meteor.userId()){
         FlowRouter.go('home');
     }
 }]);
 
+// home route redirects to /stocks if the user is logged in
 FlowRouter.route('/', {
     name: 'home',
     action() {
@@ -24,6 +28,7 @@ FlowRouter.route('/', {
     }
 });
 
+// Renders the Stocks template
 FlowRouter.route('/stocks', {
     name: 'stocks',
     action() {
@@ -33,6 +38,7 @@ FlowRouter.route('/stocks', {
     }
 });
 
+// Renders the SingleStock template
 FlowRouter.route('/stock/:id', {
     name: 'stock',
     action() {

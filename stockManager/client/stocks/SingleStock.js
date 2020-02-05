@@ -1,5 +1,6 @@
 import { Stocks } from  '../../collections/Stocks';
 
+// subscribe to a single stock
 Template.SingleStock.onCreated(function()  {
     var self = this;
     self.autorun(function(){
